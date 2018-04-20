@@ -1,5 +1,6 @@
 package hystrixmavensample.controllers;
 
+import hystrixmavensample.builders.AvengerBuilder;
 import hystrixmavensample.models.Avenger;
 import hystrixmavensample.models.Avengers;
 import hystrixmavensample.services.AvengersService;
@@ -12,8 +13,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-
-import java.util.List;
 
 import static java.util.Arrays.asList;
 import static org.mockito.Mockito.when;
@@ -40,11 +39,8 @@ public class AvengersControllerTest {
 
 
     private Avengers buildAvengers() {
-        Avenger avenger1 = new Avenger();
-
-        avenger1.setId(1);
-        avenger1.setEmail("test@email.com");
-        avenger1.setName("Test Avenger");
+        AvengerBuilder avengerBuilder = new AvengerBuilder();
+        Avenger avenger1 = avengerBuilder.build();
 
         Avengers avengers = new Avengers();
         avengers.setAvengers(asList(avenger1));

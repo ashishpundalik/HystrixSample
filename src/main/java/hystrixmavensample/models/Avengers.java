@@ -16,7 +16,7 @@ public class Avengers implements Serializable {
 
     @Override
     public String toString() {
-        final StringBuilder sb = new StringBuilder("avengers: {");
+        final StringBuilder sb = new StringBuilder("{ avengers: ");
         sb.append(avengers);
         sb.append('}');
         return sb.toString();

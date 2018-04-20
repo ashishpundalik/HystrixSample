@@ -7,7 +7,6 @@ public class Avenger implements Serializable {
     private String name;
     private long id;
     private String email;
-//    private List<String> weapons = new ArrayList<String>();
     private List<String> weapons;
 
     public Avenger() {}
